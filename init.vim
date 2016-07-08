@@ -28,14 +28,23 @@ set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
 call plug#begin()
+" rust-mode from original rust repo
 Plug 'rust-lang/rust.vim'
+" syntax checker
 Plug 'scrooloose/syntastic'
+" tab completion
 Plug 'ervandew/supertab'
+" bunch of color schemes
 Plug 'flazz/vim-colorschemes'
+" fuzzy file search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" TOML file mode
 Plug 'cespare/vim-toml'
+" colorscheme
+Plug 'junegunn/seoul256.vim'
 call plug#end()
 
-colorscheme gentooish
+set background=dark
+colorscheme seoul256
 
 nnoremap <C-P> :FZF<CR>
