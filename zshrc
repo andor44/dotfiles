@@ -13,16 +13,30 @@ compinit
 # End of lines added by compinstall
 
 # Begin antigen
-source /home/andor/git/antigen/antigen.zsh
+if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
+    source $HOME/git/antigen/antigen.zsh
 
-antigen use oh-my-zsh
+    antigen use oh-my-zsh
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
+    antigen bundle zsh-users/zsh-syntax-highlighting
+    antigen bundle zsh-users/zsh-autosuggestions
 
-# End antigen
-antigen apply
+    antigen theme cypher
 
+    # End antigen
+    antigen apply
+fi
 
 # Aliases
 alias ls='ls --color=auto --group-directories-first'
+
+# Add cargo to path, given that it's user-installed through rustup
+if [[ -a $HOME/.cargo/env ]]; then
+    source $HOME/.cargo/env
+fi
+
+export EDITOR=nvim
+# if the silver searcher is available, make fzf use it to respect .gitignore
+if ! type "ag" > /dev/null; then
+    export FZF_DEFAULT_COMMAND='ag -g ""'
+fi
