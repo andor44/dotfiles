@@ -48,6 +48,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'kien/rainbow_parentheses.vim'
 " respect editorconfigs
 Plug 'editorconfig/editorconfig-vim'
+" git stuff
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set background=dark
@@ -64,3 +66,4 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 nnoremap <C-P> :FZF<CR>
+let g:syntastic_rust_checkers = ['rustc']

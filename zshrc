@@ -40,3 +40,5 @@ export EDITOR=nvim
 if ! type "ag" > /dev/null; then
     export FZF_DEFAULT_COMMAND='ag -g ""'
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
