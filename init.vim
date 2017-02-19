@@ -27,9 +27,12 @@ set hidden              " Hide buffers when opening new ones
 set undolevels=1000               " Number of undo levels
 set backspace=indent,eol,start    " Backspace behaviour
 
+set clipboard=unnamedplus         " copy to X clipboard on Linux
+
 call plug#begin()
-" rust-mode from original rust repo
-Plug 'rust-lang/rust.vim'
+" rust-mode from patched repo for cargo checker
+" TODO: go back to OG rust repo
+Plug 'jlevesy/rust.vim'
 " syntax checker
 Plug 'scrooloose/syntastic'
 " tab completion
@@ -66,4 +69,5 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 nnoremap <C-P> :FZF<CR>
-let g:syntastic_rust_checkers = ['rustc']
+
+let g:syntastic_rust_checkers = ['cargo']
