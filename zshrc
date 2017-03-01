@@ -28,7 +28,8 @@ if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
 fi
 
 # Aliases
-alias ls='ls --color=auto --group-directories-first'
+# alias ls='ls --color=auto --group-directories-first'
+alias k='kubectl'
 
 # Add cargo to path, given that it's user-installed through rustup
 if [[ -a $HOME/.cargo/env ]]; then
@@ -40,5 +41,11 @@ export EDITOR=nvim
 if ! type "ag" > /dev/null; then
     export FZF_DEFAULT_COMMAND='ag -g ""'
 fi
+
+if ! type "kubectl" > /dev/null; then
+    source <(kubectl completion zsh)
+fi
+
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
