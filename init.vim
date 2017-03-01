@@ -41,6 +41,7 @@ Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
 " fuzzy file search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " TOML file mode
 Plug 'cespare/vim-toml'
 " colorscheme
@@ -53,6 +54,8 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'editorconfig/editorconfig-vim'
 " git stuff
 Plug 'tpope/vim-fugitive'
+" respect file's/project's tab/spaces convention
+Plug 'tpope/vim-sleuth.git'
 call plug#end()
 
 set background=dark
@@ -69,5 +72,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 nnoremap <C-P> :FZF<CR>
+nnoremap <C-B> :Buffers<CR>
+nnoremap <C-F> :Lines<CR>
 
 let g:syntastic_rust_checkers = ['cargo']
