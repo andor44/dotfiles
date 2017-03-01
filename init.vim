@@ -55,7 +55,7 @@ Plug 'editorconfig/editorconfig-vim'
 " git stuff
 Plug 'tpope/vim-fugitive'
 " respect file's/project's tab/spaces convention
-Plug 'tpope/vim-sleuth.git'
+Plug 'tpope/vim-sleuth'
 call plug#end()
 
 set background=dark
