@@ -18,8 +18,20 @@ if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
 
     antigen use oh-my-zsh
 
+    # misc
     antigen bundle zsh-users/zsh-syntax-highlighting
     antigen bundle zsh-users/zsh-autosuggestions
+    antigen bundle command-not-found
+
+    # autocompletion stuff
+    antigen bundle kubectl
+    antigen bundle git
+    antigen bundle httpie
+    antigen bundle mosh
+
+    # rust things
+    antigen bundle cargo
+    antigen bundle rust
 
     antigen theme cypher
 
