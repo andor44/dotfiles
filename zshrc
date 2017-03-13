@@ -42,6 +42,8 @@ fi
 # Aliases
 # alias ls='ls --color=auto --group-directories-first'
 alias k='kubectl'
+alias kctx='kubectl config use-context'
+alias ksns="kubectl config set-context $(kubectl config current-context) --namespace"
 
 # Add cargo to path, given that it's user-installed through rustup
 if [[ -a $HOME/.cargo/env ]]; then
@@ -50,12 +52,8 @@ fi
 
 export EDITOR=nvim
 # if the silver searcher is available, make fzf use it to respect .gitignore
-if ! type "ag" > /dev/null; then
+if (( $+commands[ag] )); then
     export FZF_DEFAULT_COMMAND='ag -g ""'
-fi
-
-if ! type "kubectl" > /dev/null; then
-    source <(kubectl completion zsh)
 fi
 
 fpath=(/usr/local/share/zsh-completions $fpath)
