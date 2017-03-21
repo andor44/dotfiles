@@ -56,6 +56,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 " respect file's/project's tab/spaces convention
 Plug 'tpope/vim-sleuth'
+" puppet syntax highlight
+Plug 'rodjek/vim-puppet'
+" update those damn serials
+Plug 'seveas/bind.vim'
 call plug#end()
 
 set background=dark
@@ -76,3 +80,7 @@ nnoremap <C-B> :Buffers<CR>
 nnoremap <C-F> :Lines<CR>
 
 let g:syntastic_rust_checkers = ['cargo']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_loc_list_height = 4
