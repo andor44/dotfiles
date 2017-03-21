@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=2000
+SAVEHIST=2000
 setopt autocd nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -21,7 +21,6 @@ if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
     # misc
     antigen bundle zsh-users/zsh-syntax-highlighting
     antigen bundle zsh-users/zsh-autosuggestions
-    antigen bundle command-not-found
 
     # autocompletion stuff
     antigen bundle kubectl
@@ -43,7 +42,7 @@ fi
 # alias ls='ls --color=auto --group-directories-first'
 alias k='kubectl'
 alias kctx='kubectl config use-context'
-alias ksns="kubectl config set-context $(kubectl config current-context) --namespace"
+alias ksns='kubectl config set-context $(kubectl config current-context) --namespace'
 
 # Add cargo to path, given that it's user-installed through rustup
 if [[ -a $HOME/.cargo/env ]]; then
