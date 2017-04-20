@@ -43,6 +43,7 @@ fi
 alias k='kubectl'
 alias kctx='kubectl config use-context'
 alias ksns='kubectl config set-context $(kubectl config current-context) --namespace'
+alias stern='stern --color always'
 
 # Add cargo to path, given that it's user-installed through rustup
 if [[ -a $HOME/.cargo/env ]]; then
