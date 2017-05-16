@@ -8,10 +8,6 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
 # Begin antigen
 if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
     source $HOME/git/antigen/antigen.zsh
@@ -32,8 +28,6 @@ if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
     antigen bundle cargo
     antigen bundle rust
 
-    antigen theme cypher
-
     # End antigen
     antigen apply
 fi
@@ -50,12 +44,13 @@ if [[ -a $HOME/.cargo/env ]]; then
     source $HOME/.cargo/env
 fi
 
-export EDITOR=nvim
 # if the silver searcher is available, make fzf use it to respect .gitignore
 if (( $+commands[ag] )); then
     export FZF_DEFAULT_COMMAND='ag -g ""'
 fi
 
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+PROMPT="%{${fg_bold[red]}%}:: %{${fg[green]}%}%5~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}
+»%{${reset_color}%} "
+export EDITOR=nvim
