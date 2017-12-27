@@ -1,7 +1,7 @@
 "" General
 set linebreak           " Break lines at word (requires Wrap lines)
 set showbreak=+++       " Wrap-broken line prefix
-set textwidth=100       " Line wrap (number of cols)
+set textwidth=0         " Line wrap (number of cols)
 set showmatch           " Highlight matching brace
 set visualbell          " Use visual bell (no beeping)
  
@@ -60,6 +60,10 @@ Plug 'tpope/vim-sleuth'
 Plug 'rodjek/vim-puppet'
 " update those damn serials
 Plug 'seveas/bind.vim'
+" Crystal mode
+Plug 'rhysd/vim-crystal'
+" Shortcuts
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 set background=dark
@@ -81,3 +85,8 @@ nnoremap <C-F> :Lines<CR>
 
 let g:syntastic_rust_checkers = ['cargo']
 let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list = 1
+
+" file type specific commands
+" Markdown should autowrap at 100 columns
+autocmd bufreadpre *.md setlocal textwidth=100

@@ -23,6 +23,7 @@ if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
     antigen bundle git
     antigen bundle httpie
     antigen bundle mosh
+    antigen bundle docker
 
     # rust things
     antigen bundle cargo
@@ -54,3 +55,9 @@ fi
 PROMPT="%{${fg_bold[red]}%}:: %{${fg[green]}%}%5~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}
 »%{${reset_color}%} "
 export EDITOR=nvim
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/andor/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/andor/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/andor/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/andor/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
