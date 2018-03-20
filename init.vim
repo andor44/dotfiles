@@ -30,9 +30,8 @@ set backspace=indent,eol,start    " Backspace behaviour
 set clipboard=unnamedplus         " copy to X clipboard on Linux
 
 call plug#begin()
-" rust-mode from patched repo for cargo checker
-" TODO: go back to OG rust repo
-Plug 'jlevesy/rust.vim'
+" rust-mode
+Plug 'rust-lang/rust.vim'
 " syntax checker
 Plug 'scrooloose/syntastic'
 " tab completion
