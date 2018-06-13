@@ -82,9 +82,9 @@ nnoremap <C-P> :FZF<CR>
 nnoremap <C-B> :Buffers<CR>
 nnoremap <C-F> :Lines<CR>
 
-let g:syntastic_rust_checkers = ['cargo']
-let g:syntastic_check_on_open = 1
-let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_rust_checkers = ['cargo']
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_always_populate_loc_list = 1
 
 " file type specific commands
 " Markdown should autowrap at 100 columns
