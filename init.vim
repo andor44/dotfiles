@@ -33,7 +33,7 @@ call plug#begin()
 " rust-mode
 Plug 'rust-lang/rust.vim'
 " syntax checker
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 " tab completion
 Plug 'ervandew/supertab'
 " bunch of color schemes
@@ -63,6 +63,10 @@ Plug 'seveas/bind.vim'
 Plug 'rhysd/vim-crystal'
 " Shortcuts
 Plug 'tpope/vim-unimpaired'
+" Commenting
+Plug 'tpope/vim-commentary'
+" Terraform
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 set background=dark
@@ -78,13 +82,19 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" FZF shortcuts
 nnoremap <C-P> :FZF<CR>
 nnoremap <C-B> :Buffers<CR>
 nnoremap <C-F> :Lines<CR>
 
-"let g:syntastic_rust_checkers = ['cargo']
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_always_populate_loc_list = 1
+" ALE settings
+" Do not run checkers on changing buffer
+let g:ale_lint_on_text_changed = 'never'
+" Do not run checkers upon entering buffer
+let g:ale_lint_on_enter = 0
+let g:ale_linters = {'rust': ['cargo']}
+" Open loclist after checks run
+let g:ale_open_list = 1
 
 " file type specific commands
 " Markdown should autowrap at 100 columns
