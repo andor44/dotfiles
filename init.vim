@@ -69,8 +69,8 @@ Plug 'tpope/vim-commentary'
 Plug 'hashivim/vim-terraform'
 call plug#end()
 
-set background=dark
-colorscheme seoul256
+set background=light
+colorscheme summerfruit256
 
 " plugin configs
 " lightline color scheme
