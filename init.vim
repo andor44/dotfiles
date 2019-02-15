@@ -22,8 +22,8 @@ set confirm             " Prompt confirmation dialogs
 set ruler               " Show row and column ruler information
 set scrolloff=5         " Pre-scroll buffer 5 lines ahead of cursor
 set hidden              " Hide buffers when opening new ones
- 
- 
+set undofile
+set undodir=~/.vim/undodir
 set undolevels=1000               " Number of undo levels
 set backspace=indent,eol,start    " Backspace behaviour
 
