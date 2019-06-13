@@ -11,4 +11,7 @@
 [diff "sopsdiffer"]
 	textconv = sops -d
 [core]
-    pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -r
+    #pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -r -x1,5
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
