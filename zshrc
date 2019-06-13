@@ -55,6 +55,8 @@ fi
 PROMPT="%m %{${fg_bold[red]}%}:: %{${fg[green]}%}%5~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}
 »%{${reset_color}%} "
 export EDITOR=nvim
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/andor/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/andor/Downloads/google-cloud-sdk/path.zsh.inc'; fi
