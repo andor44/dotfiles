@@ -16,6 +16,7 @@ set shiftwidth=4        " Number of auto-indent spaces
 set smartindent         " Enable smart-indent
 set smarttab            " Enable smart-tabs
 set softtabstop=4       " Number of spaces per Tab
+set tabstop=4
  
 "" Advanced
 set confirm             " Prompt confirmation dialogs
@@ -55,10 +56,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 " respect file's/project's tab/spaces convention
 Plug 'tpope/vim-sleuth'
-" puppet syntax highlight
-Plug 'rodjek/vim-puppet'
-" update those damn serials
-Plug 'seveas/bind.vim'
 " Crystal mode
 Plug 'rhysd/vim-crystal'
 " Shortcuts
@@ -67,10 +64,9 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 " Terraform
 Plug 'hashivim/vim-terraform'
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
-
-set background=light
-colorscheme summerfruit256
 
 " plugin configs
 " lightline color scheme
@@ -94,7 +90,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {'rust': ['cargo']}
 " Open loclist after checks run
-let g:ale_open_list = 1
+"let g:ale_open_list = 1
 
 " file type specific commands
 " Markdown should autowrap at 100 columns
