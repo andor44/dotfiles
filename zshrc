@@ -45,6 +45,11 @@ if [[ -a $HOME/.cargo/env ]]; then
     source $HOME/.cargo/env
 fi
 
+# iTerm2 integration
+if [[ -a $HOME/.iterm2_shell_integration.zsh ]]; then
+    source $HOME/.iterm2_shell_integration.zsh
+fi
+
 # if the silver searcher is available, make fzf use it to respect .gitignore
 if (( $+commands[ag] )); then
     export FZF_DEFAULT_COMMAND='ag -g ""'
@@ -57,9 +62,14 @@ PROMPT="%m %{${fg_bold[red]}%}:: %{${fg[green]}%}%5~%(0?. . %{${fg[red]}%}%? )%{
 export EDITOR=nvim
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
+export LC_ALL=en_US.UTF-8
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/andor/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/andor/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '~/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '~/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/andor/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/andor/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '~/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '~/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+iterm2_print_user_vars() {
+  iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+}
