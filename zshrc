@@ -16,7 +16,6 @@ if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
 
     # misc
     antigen bundle zsh-users/zsh-syntax-highlighting
-    antigen bundle zsh-users/zsh-autosuggestions
 
     # autocompletion stuff
     antigen bundle kubectl
@@ -32,13 +31,6 @@ if [[ -a $HOME/git/antigen/antigen.zsh ]]; then
     # End antigen
     antigen apply
 fi
-
-# Aliases
-# alias ls='ls --color=auto --group-directories-first'
-alias k='kubectl'
-alias kctx='kubectl config use-context'
-alias ksns='kubectl config set-context $(kubectl config current-context) --namespace'
-alias stern='stern --color always'
 
 # Add cargo to path, given that it's user-installed through rustup
 if [[ -a $HOME/.cargo/env ]]; then
@@ -59,16 +51,6 @@ fi
 
 PROMPT="%m %{${fg_bold[red]}%}:: %{${fg[green]}%}%5~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}
 »%{${reset_color}%} "
-export EDITOR=nvim
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
-export LC_ALL=en_US.UTF-8
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '~/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '~/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '~/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 iterm2_print_user_vars() {
   iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
