@@ -8,12 +8,16 @@
 	rebase = true
 [grep]
 	lineNumber = true
-[diff "sopsdiffer"]
-	textconv = sops -d
 [core]
-    #pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -r -x1,5
+	excludesfile = $HOME/.gitignore_global
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [push]
 	default = current
+
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta

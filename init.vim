@@ -4,12 +4,12 @@ set showbreak=+++       " Wrap-broken line prefix
 set textwidth=0         " Line wrap (number of cols)
 set showmatch           " Highlight matching brace
 set visualbell          " Use visual bell (no beeping)
- 
+
 set hlsearch            " Highlight all search results
 set smartcase           " Enable smart-case search
 set ignorecase          " Always case-insensitive
 set incsearch           " Searches for strings incrementally
- 
+
 set autoindent          " Auto-indent new lines
 set expandtab           " Use spaces instead of tabs
 set shiftwidth=4        " Number of auto-indent spaces
@@ -17,7 +17,9 @@ set smartindent         " Enable smart-indent
 set smarttab            " Enable smart-tabs
 set softtabstop=4       " Number of spaces per Tab
 set tabstop=4
- 
+set list
+set number
+
 "" Advanced
 set confirm             " Prompt confirmation dialogs
 set ruler               " Show row and column ruler information
@@ -56,8 +58,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 " respect file's/project's tab/spaces convention
 Plug 'tpope/vim-sleuth'
-" Crystal mode
-Plug 'rhysd/vim-crystal'
 " Shortcuts
 Plug 'tpope/vim-unimpaired'
 " Commenting
@@ -66,11 +66,14 @@ Plug 'tpope/vim-commentary'
 Plug 'hashivim/vim-terraform'
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Crystal
+Plug 'vim-crystal/vim-crystal'
 call plug#end()
 
 " plugin configs
 " lightline color scheme
 let g:lightline = { 'colorscheme': 'seoul256', }
+colorscheme wombat256
 
 " activate rainbow parens
 au VimEnter * RainbowParenthesesToggle
